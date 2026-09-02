@@ -50,6 +50,19 @@ this wiki's contract and it wins over anything here.
 
 ## Rules
 
+- Every page goes at `wiki/<type>/<slug>.md`. Never write a page to the wiki
+  root, and never outside `wiki/`.
+- Do not link what you will not write. Every `[[target]]` you introduce must
+  exist as a page by the time the ingest ends — create it in this same ingest
+  or do not link it. A dangling link is a defect, not a to-do.
+- `support:` describes the evidence, not your confidence. One source, or one
+  source plus a code read, is `one-source` — never `solid`. `solid` needs
+  several independent sources agreeing.
+- Steps 7 to 10 are not optional. An ingest that writes pages but never
+  updates `index.md`, appends `log.md`, and commits has left the wiki
+  inconsistent. If you cannot finish, say plainly that the ingest is
+  incomplete, list exactly what is missing, and append that to `log.md` as
+  `left open:` — never leave it silent.
 - Several sources at once: show one filing plan for the whole batch, then run
   the protocol per source in the order given — index and log after each, one
   commit per source, so a bad one can be reverted alone. Do not merge sources

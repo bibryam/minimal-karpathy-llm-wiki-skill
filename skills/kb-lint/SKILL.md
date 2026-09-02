@@ -23,6 +23,12 @@ HIGH
 - ambiguous link — two files share a basename, so a wikilink resolves
   unpredictably to one of them
 - index drift — a page in `wiki/` missing from `index.md`, or listed but gone
+- unlogged pages — pages exist that no `log.md` entry accounts for, or an
+  uncommitted working tree: an ingest stopped mid-flight
+- misplaced page — a `.md` page outside `wiki/<type>/`, e.g. at the repo root
+  (Obsidian puts a new note there when you click a link with no target)
+- pin mismatch — a citation's `<rev>` is not the pin `CLAUDE.md` declares
+- overclaimed support — `support: solid` on a page whose `sources:` lists one
 - stale claim — a page asserts X, a newer source in `raw/` contradicts it,
   and the page was never updated
 - uncited claim — a factual line in `wiki/` with no citation

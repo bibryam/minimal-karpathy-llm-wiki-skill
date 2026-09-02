@@ -1,6 +1,6 @@
 {
   "name": "llm-wiki",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Four Agent Skills that turn a folder of markdown into an LLM-maintained knowledge base: ingest sources into cited pages, ask questions answered from those pages, and lint the wiki for contradictions, orphans, and stale claims. A minimal implementation of Karpathy's LLM Wiki pattern - markdown and git only, no database, no embeddings, no runtime code.",
   "author": {
     "name": "Bilgin Ibryam",
