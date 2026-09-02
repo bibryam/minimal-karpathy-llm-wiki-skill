@@ -2,7 +2,7 @@
 name: kb-ingest
 description: Ingest a source into the wiki — read it in full, compile durable cited pages, and update the index, log, and overview in one commit. Accepts files in raw/, URLs to fetch and archive first, a directory of a code repo read in place, or the answer /kb-ask just gave. Use when the user says ingest, compile this source, add this to the wiki, or pastes a link to read into it.
 license: MIT
-argument-hint: <file-in-raw | url | code-dir@tag | last-answer> [more ...]
+argument-hint: <raw/file | url | code:<dir inside the Code repo> | last-answer> [more ...]
 ---
 
 # kb-ingest
@@ -17,9 +17,11 @@ this wiki's contract and it wins over anything here.
    markdown to `raw/YYYY-MM-DD-slug.md` with the URL on line 1 and a note of
    what was excerpted, then continue. Archiving first is what makes the
    citation stable; a bare URL is not a source.
-   Given a directory of a repo that `CLAUDE.md` names as code: read it in
-   place at the pinned tag — nothing is copied into `raw/` — and cite every
-   claim by pin, `<repo>@<tag>:<path>:<line>`. Stamp the pages `verified-at`.
+   Given `code:<dir>`: the path is inside the repo that `CLAUDE.md` names
+   under Code, not inside this wiki. Read every file in that directory in
+   place at the pinned tag or commit — nothing is copied into `raw/` — and cite
+   every claim by pin, `<repo>@<tag-or-sha>:<path>:<line>`. Stamp the pages
+   `verified-at` with that same tag or sha.
    Given "the last answer": the source is the code and pages that answer
    relied on; compile it into pages the same way, with the same pins.
 1. Read `./CLAUDE.md`, then `wiki/index.md`. Know what exists before creating
