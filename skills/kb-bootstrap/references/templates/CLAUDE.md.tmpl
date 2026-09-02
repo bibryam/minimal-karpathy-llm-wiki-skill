@@ -12,6 +12,14 @@
   as understanding improves.
 - this file — the conventions below. The only operating contract.
 
+## Code <delete this section if the wiki does not describe a codebase>
+
+`<path-to-repo>`, pinned to `<tag>`. It is a verification target, not a
+source document: read it in place, cite by pin `<repo>@<tag>:<path>:<line>`,
+never copy files from it into `raw/`. When a release ships, bump the tag here
+and re-verify the pages whose `verified-at` is now behind it. Where the docs
+and the code disagree, a page records both with citations — it never picks.
+
 ## Rules
 
 1. Every claim in `wiki/` carries a citation: `(raw/<file>)` or a URL. No

@@ -17,10 +17,14 @@ follow-up, not a side effect of asking.
 2. Pick candidate pages from the index. Grep `wiki/` for the question's key
    terms to catch what the index does not surface.
 3. OPEN and read the candidate pages in full. Follow their links one hop.
-4. Fall back to `raw/` when the wiki is thin on the topic — and say so.
+4. Wiki thin or empty on the topic? Fall back to `raw/`, and to the code repo
+   `CLAUDE.md` names, read in place at its pinned tag — and say that is where
+   the answer came from. Cite code by pin, `<repo>@<tag>:<path>:<line>`.
 5. Answer: conclusion first, then the support. Cite every factual claim as
    `(wiki/concepts/x.md)` or `(raw/<file>)`.
 6. State what you could NOT answer, and which source would settle it.
+7. If the answer needed the code or `raw/`, end with one line: this is not in
+   the wiki yet — say `/kb-ingest last-answer` to file it.
 
 ## Rules
 

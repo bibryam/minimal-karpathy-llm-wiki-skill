@@ -13,7 +13,8 @@ how.
 
 ## Ask (one message, and skip whatever you already know)
 
-1. Name, and one line on the subject. What is it deliberately NOT about?
+1. Name, one line on the subject, what it is deliberately NOT about — and,
+   if it describes a codebase, the repo path and the tag to pin.
 2. Target directory.
 3. Any page type beyond sources, entities, concepts, comparisons, synthesis?
 
@@ -26,8 +27,8 @@ That is the whole interview. Do not offer options nobody asked for.
 2. Create `raw/` and `wiki/{sources,entities,concepts,comparisons,synthesis}`,
    each with a `.gitkeep`.
 3. Write `CLAUDE.md` from `references/templates/CLAUDE.md.tmpl`: fill in the
-   name and subject line, keep the page types chosen, delete the guidance
-   angle-brackets.
+   name and subject line, fill or delete the Code section, keep the page
+   types chosen, delete the guidance angle-brackets.
 4. Copy `index.md`, `log.md`, `overview.md` from `references/templates/` into
    `wiki/`, stamped with today's date.
 5. Write `.gitignore` (`.DS_Store`, `.obsidian/workspace*`).
