@@ -1,8 +1,8 @@
 ---
 name: kb-ingest
-description: Ingest a source into the wiki — read it in full, compile durable cited pages, and update the index, log, and overview in one commit. Use when the user says ingest, compile this source, or add this to the wiki.
+description: Ingest a source into the wiki — read it in full, compile durable cited pages, and update the index, log, and overview in one commit. Accepts a file already in raw/ or a URL to fetch and archive first. Use when the user says ingest, compile this source, add this to the wiki, or pastes a link to read into it.
 license: MIT
-argument-hint: <file-in-raw>
+argument-hint: <file-in-raw | url>
 ---
 
 # kb-ingest
@@ -12,6 +12,11 @@ this wiki's contract and it wins over anything here.
 
 ## Protocol
 
+0. Given a URL rather than a file: fetch the page, keep the part the user
+   asked for (one release, one article — not a whole changelog), save it as
+   markdown to `raw/YYYY-MM-DD-slug.md` with the URL on line 1 and a note of
+   what was excerpted, then continue. Archiving first is what makes the
+   citation stable; a bare URL is not a source.
 1. Read `./CLAUDE.md`, then `wiki/index.md`. Know what exists before creating
    anything.
 2. Read the source COMPLETELY. No skimming, no partial reads.
