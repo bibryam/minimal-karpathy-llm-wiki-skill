@@ -1,8 +1,8 @@
 ---
 name: kb-ingest
-description: Ingest a source into the wiki — read it in full, compile durable cited pages, and update the index, log, and overview in one commit. Accepts a file already in raw/ or a URL to fetch and archive first. Use when the user says ingest, compile this source, add this to the wiki, or pastes a link to read into it.
+description: Ingest a source into the wiki — read it in full, compile durable cited pages, and update the index, log, and overview in one commit. Accepts one or more files already in raw/, or URLs to fetch and archive first. Use when the user says ingest, compile this source, add this to the wiki, or pastes a link to read into it.
 license: MIT
-argument-hint: <file-in-raw | url>
+argument-hint: <file-in-raw | url> [more ...]
 ---
 
 # kb-ingest
@@ -40,6 +40,10 @@ this wiki's contract and it wins over anything here.
 
 ## Rules
 
+- Several sources at once: show one filing plan for the whole batch, then run
+  the protocol per source in the order given — index and log after each, one
+  commit per source, so a bad one can be reverted alone. Do not merge sources
+  into one pass; each gets read completely on its own.
 - After step 3, never edit, reword, or delete anything in `raw/`.
 - Every factual line cites `(raw/<file>)` or a URL. Uncited, it does not ship.
 - Preserve the source's own claim before adding your reading of it.
