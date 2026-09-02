@@ -18,10 +18,13 @@ this wiki's contract and it wins over anything here.
    what was excerpted, then continue. Archiving first is what makes the
    citation stable; a bare URL is not a source.
    Given `code:<repo>/<dir>`: `<repo>` is one of the repos `CLAUDE.md` names
-   under Code and `<dir>` a path inside it — not inside this wiki. Read every file in that directory in
-   place at the pinned tag or commit — nothing is copied into `raw/` — and cite
-   every claim by pin, `<repo>@<tag-or-sha>:<path>:<line>`. Stamp the pages
-   `verified-at` with that same tag or sha.
+   under Code and `<dir>` a path inside it — not inside this wiki. Read every
+   file AT THE PIN, not at whatever the working tree happens to be: if the
+   checkout is elsewhere, `git show <pin>:<path>`. If tree and pin differ
+   materially, stop and ask which to verify against — never stamp a pin the
+   code was not read at. Nothing is copied into `raw/`; cite every claim by
+   pin, `<repo>@<tag-or-sha>:<path>:<line>`, and stamp the pages
+   `verified-at` with that same pin.
    Given "the last answer": the source is the code and pages that answer
    relied on; compile it into pages the same way, with the same pins.
 1. Read `./CLAUDE.md`, then `wiki/index.md`. Know what exists before creating
