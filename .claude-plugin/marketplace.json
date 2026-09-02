@@ -1,0 +1,25 @@
+{
+  "name": "minimal-karpathy-llm-wiki-skill",
+  "version": "0.1.0",
+  "description": "Single-plugin marketplace for minimal-karpathy-llm-wiki-skill",
+  "owner": {
+    "name": "Bilgin Ibryam",
+    "url": "https://github.com/bibryam"
+  },
+  "plugins": [
+    {
+      "name": "llm-wiki",
+      "source": "./",
+      "description": "Four Agent Skills for an LLM-maintained markdown knowledge base: bootstrap a vault, ingest sources into cited pages, ask questions answered from those pages, lint for contradictions and stale claims.",
+      "license": "MIT",
+      "homepage": "https://github.com/bibryam/minimal-karpathy-llm-wiki-skill",
+      "repository": "https://github.com/bibryam/minimal-karpathy-llm-wiki-skill",
+      "author": {
+        "name": "Bilgin Ibryam",
+        "url": "https://github.com/bibryam"
+      },
+      "displayName": "Karpathy LLM Wiki (minimal)",
+      "version": "0.1.0"
+    }
+  ]
+}

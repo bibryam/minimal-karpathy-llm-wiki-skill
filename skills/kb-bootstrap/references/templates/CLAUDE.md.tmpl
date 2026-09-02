@@ -1,0 +1,69 @@
+# <NAME> — LLM wiki
+
+<one sentence: what this wiki is about, and what it is deliberately NOT about>
+
+## Layers
+
+- `raw/` — source documents. Articles, papers, specs, notes, data files.
+  Immutable: you read from them and never modify them. One file per source,
+  `YYYY-MM-DD-slug.md`, with its origin URL or citation on the first line. A
+  source may be renamed and given that header on first ingest, never after.
+- `wiki/` — you own this entirely. Add, revise, restructure, and retire pages
+  as understanding improves.
+- this file — the conventions below. The only operating contract.
+
+## Rules
+
+1. Every claim in `wiki/` carries a citation: `(raw/<file>)` or a URL. No
+   citation, no claim.
+2. Separate verified from inferred. Label anything unconfirmed and say what
+   would confirm it.
+3. Conflicting sources: show both with citations. Never silently pick one.
+4. Every page except `index.md` and `log.md` carries the frontmatter below and
+   appears in `wiki/index.md`.
+5. Links are `[[wikilinks]]` — Obsidian resolves them by filename, so never
+   write a path, and every filename must be unique across the wiki. Link
+   generously; the links are the graph.
+6. One ingest updates the new page(s), every existing page the source touches,
+   `index.md`, `log.md`, and `overview.md` if the big picture moved — in ONE
+   commit.
+7. A search hit is a lead, not evidence. Read the whole page before using
+   anything from it, and cite the page rather than the hit.
+8. Local-first. Never push or send anything outward without being asked.
+
+## Pages
+
+    wiki/index.md            catalog of every page. Read this first.
+    wiki/log.md              append-only history of every operation
+    wiki/overview.md         the whole wiki in a few paragraphs
+    wiki/sources/<slug>.md   one per ingested source: key claims, exact quotes
+    wiki/entities/<name>.md  person, company, product, project, tool
+    wiki/concepts/<name>.md  a single idea, held steady
+    wiki/comparisons/<a>-vs-<b>.md
+    wiki/synthesis/<topic>.md   conclusions drawn across several pages
+
+A page opens with one paragraph stating its claim, then the detail with
+every factual line cited, then a `## Related` list of wikilinks.
+
+## Frontmatter
+
+    ---
+    title: <Page Title>
+    type: source | entity | concept | comparison | synthesis | overview
+    created: YYYY-MM-DD
+    updated: YYYY-MM-DD
+    sources: [<source-filename.md>]   # filenames only, never paths
+    support: solid | thin | one-source | disputed | unsupported
+    verified-at: <version or tag, if this describes something versioned>
+    tags: [<tag>, <tag>]
+    ---
+
+## Conventions
+
+- Filenames: lowercase, hyphens, no spaces. Dates: `YYYY-MM-DD`.
+- `log.md` newest first: `## YYYY-MM-DD · <op> — <subject>`, then `created:` /
+  `updated:` / `left open:` bullets. `left open:` is mandatory; write
+  `nothing` if there is nothing.
+- Cite versioned material by pin — `(<repo>@<tag>:<path>:<line>)` — never by
+  copying it in. A pin stays true; a copy goes stale on the next commit.
+- When uncertain, write the uncertainty down rather than omitting it.
